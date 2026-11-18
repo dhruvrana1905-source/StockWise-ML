@@ -37,7 +37,7 @@ ticker = st.sidebar.selectbox(
         "ICICIBANK.NS",
         "SBIN.NS",
         "ITC.NS",
-        "TATAMOTORS.NS",
+        "TMCV.NS",,
         "BHARTIARTL.NS",
         "LT.NS"
     ]
