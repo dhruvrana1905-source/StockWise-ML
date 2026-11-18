@@ -405,7 +405,7 @@ st.line_chart(comparison_df)
 st.header("7. Historical NSE Data")
 
 st.dataframe(
-    feature_data.dropna(subset=feature_columns).tail(10)[feature_columns],,
+    feature_data.dropna(subset=feature_columns).tail(10)[feature_columns],
     use_container_width=True
 )
 
