@@ -159,6 +159,21 @@ st.caption(
 )
 
 feature_data = make_features(data)
+feature_data = feature_data.dropna(
+    subset=["SMA_5", "SMA_20", "RSI_14", "Volatility_20"]
+)
+
+st.header("Technical Indicators")
+
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
+
+latest = feature_data.iloc[-1]
+
+col1.metric("SMA 5", f"₹{latest['SMA_5']:.2f}")
+col2.metric("SMA 20", f"₹{latest['SMA_20']:.2f}")
+col3.metric("RSI 14", f"{latest['RSI_14']:.2f}")
+col4.metric("Volatility 20", f"{latest['Volatility_20']:.4f}")
 
 feature_columns = [
     "Open", "High", "Low", "Close", "Volume",
