@@ -1,9 +1,13 @@
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import numpy as np
 import pandas as pd
 
 from features import make_features
-
 
 def sample_data():
     close = 100 + np.arange(80) * 0.3 + 5 * np.sin(np.arange(80))
