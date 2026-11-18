@@ -78,7 +78,11 @@ for name, model in models.items():
         mlflow.log_metric("RMSE", rmse)
         mlflow.log_metric("R2", r2)
 
-        mlflow.sklearn.log_model(model, artifact_path="model")
+        mlflow.sklearn.log_model(
+    model,
+    name="model",
+    skops_trusted_types=["sklearn.tree._tree.Tree"]
+)
 
         print(f"\n{name}")
         print(f"MAE: {mae:.4f}")
